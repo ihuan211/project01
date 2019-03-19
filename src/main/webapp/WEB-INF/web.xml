@@ -5,10 +5,15 @@
   <welcome-file-list>
       <welcome-file>/WEB-INF/index.jsp</welcome-file>
   </welcome-file-list>
+
   <!-- 配置监听spring-->
   <listener>
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+    <context-param> <!--全局范围内环境参数初始化-->
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/spring-*.xml</param-value>
+    </context-param>
   <!-- 配置DispatcherServlet -->
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
@@ -25,6 +30,7 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
+    <!-- 配置spring字符编码为utf-8 -->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
