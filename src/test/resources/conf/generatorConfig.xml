@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 
 	<!-- jdbc路径 -->
 	<classPathEntry
-			location="C:\dev\Reporsitory\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar" />
+			location="C:\dev\Reporsitory\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar" />
 	<context id="context" targetRuntime="MyBatis3">
 		<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
 			<property name="searchString" value="Example$" />
@@ -20,32 +20,32 @@
 		</commentGenerator>
 
 		<!-- 请填写connectionURL、userId、password -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://10.1.9.151:3306/loan_360new" userId="root"
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/testdb" userId="root"
 			password="root" />
 
 		<!-- 生成持久化对象 -->
-		<javaModelGenerator targetPackage="com.zhishi.bean.updateMaterial"
+		<javaModelGenerator targetPackage="com.template.dal.bean.test"
 			targetProject="src/test/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
 		<!-- 生成mapper.xml文件 -->
-		<sqlMapGenerator targetPackage="mapper.updateMaterial"
+		<sqlMapGenerator targetPackage="mapper.test"
 			targetProject="src/test/resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<!-- 生成Mapper接口 -->
-		<javaClientGenerator targetPackage="com.zhishi.dal.mapper.updateMaterial"
+		<javaClientGenerator targetPackage="com.template.dal.mapper.test"
 			targetProject="src/test/java" type="XMLMAPPER">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
 
 		<!-- 需要生成的数据库表 -->
- 		<table tableName="tb_biz_update_material_field" domainObjectName="UpdateMaterialField">
+ 		<table tableName="tb_person" domainObjectName="Person">
 			<generatedKey column="tid" sqlStatement=" select replace(uuid(),'-','')" />
 		</table>
 	</context>
