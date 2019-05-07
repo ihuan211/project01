@@ -13,4 +13,10 @@ public interface PersonService {
     int savePerson(Person person);
 
     List<Person> getPerson();
+
+    int delete(String tid);
+
+    Person getPersonById(String tid);
+
+    int update(Person person);
 }

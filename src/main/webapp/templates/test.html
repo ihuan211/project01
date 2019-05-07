@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function perDelete(tid) {
+            window.location.href = 'del?tid='+tid;
+        }
+        function perUpdate(tid) {
+            window.location.href = 'getPersonById?tid='+tid;
+        }
+    </script>
+</head>
+<body>
+<a href="templates/add.html" th:href="@{/view/add}">add</a>
+    <table>
+        <tr th:each="p : ${person}">
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.age}"></td>
+            <td th:text="${p.gender}"></td>
+            <td th:text="${#dates.format(p.createDate,'yyyy-MM-dd')}"></td>
+            <td><button th:onclick="|perDelete('${p.tid}')|">delete</button></td>
+            <td><button th:onclick="|perUpdate('${p.tid}')|">update</button></td>
+        </tr>
+    </table>
+</body>
+</html>

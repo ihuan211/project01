@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/update}" method="post">
+    <input type="hidden" name="tid" th:value="${person.tid}">
+    <table>
+        <tr>
+            <td><input type="text" th:value="${person.name}" name="name"></td>
+        </tr>
+        <tr>
+            <td><input type="text" th:value="${person.age}" name="age"></td>
+        </tr>
+        <tr>
+            <td><input type="text" th:value="${person.gender}" name="gender"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="修改"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

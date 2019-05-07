@@ -1,4 +1,4 @@
-package com.template.dal.mapper;
+package com.template.mapper;
 
 import com.template.bean.Person;
 import com.template.bean.PersonCriteria;
